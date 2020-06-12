@@ -8,7 +8,7 @@ $(document).ready(function () {
     //currentTime variable gives us the current hour (the functions are taken from moment.js)
     var currentTime = moment().hour();
 
-    // I am using each function from jQuery here (https://api.jquery.com/each/) This grabs the current element. When called, it iterates over the DOM elements that are part of the jQuery object.
+    // I am using each function from jQuery here (https://api.jquery.com/each/) This grabs the current element. When called, it iterates over the DOM elements. 
     $(".time-block").each(function () {
         //Hour variable equals to the id attribute in time-block divs - which includes all business hours. "id" is a string, but by using parseInt, we make this string a number. This refers to each div that holds these times (id).
         var hour = parseInt($(this).attr("id"));
@@ -24,18 +24,14 @@ $(document).ready(function () {
         }
     });
 
-    //$( "" ).click(function() {
-    //alert( "Handler for .click() called." );
-    //});
-
     // Storing the key
-    $(".fa-calendar-plus").click(function() {
+    $(".fa-calendar-plus").click(function () {
         // Key to be saved & value
-        var userText = $("textarea").val()
+        var userText = $(".description").val()
         localStorage.setItem("user answer", userText)
 
     });
 
-    console.log(localStorage.getItem("user answer"))  
+    console.log(localStorage.getItem("user answer"))
 
 });
